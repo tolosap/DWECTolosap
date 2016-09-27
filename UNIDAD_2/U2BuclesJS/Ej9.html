@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 9</title>
+    <script type="text/javascript">
+      var año = prompt("Indica tu año de nacimiento:");
+      var d = new Date();
+      var y = d.getFullYear();
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      if( y - año < 18){
+        document.write("Menor de edad.");
+      }else {
+        document.write("Mayor de edad.");
+      }
+    </script>
+  </body>
+</html>
