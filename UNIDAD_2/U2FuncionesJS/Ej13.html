@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 13</title>
+  <script type="text/javascript">
+  var naz = prompt('Introduzca el año de nacimiento: ');
+  var fecha = new Date();
+  var y = fecha.getFullYear();
+  function calculaEdad(naz) {
+    return (y-naz);
+  }
+  </script>
+</head>
+<body>
+  Abre la consola para ver el resultado.
+  <script type="text/javascript">
+  console.log(calculaEdad(naz));
+  </script>
+</body>
+</html>

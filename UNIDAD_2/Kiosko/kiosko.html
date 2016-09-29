@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kiosko</title>
+  <script type="text/javascript">
+  var kiosko = ['Pipas', 'Cheetos', 'Tabaco', 'Helados', 'El País', 'Nintendo Acción', 'Pepsi'];
+  var num;
+
+  function generaSurtido(){
+    return kiosko;
+  }
+
+  function consultaPrecios(num){
+    var precios = [7000000, 5, 1, 1520, 777, 123456, 666];
+    for (var i = num; i < precios.length; i++) {
+      return precios[i];
+    }
+  }
+
+  function mostrarSurtido(consultaPrecios){
+    for (var i = 0; i < kiosko.length; i++) {
+      document.write("Artículo["+(i+1)+"]: " + kiosko[i] +". Precio: "+consultaPrecios(i)+ "€ <br>");
+    }
+
+  }
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+  // document.write(generaSurtido());
+  </script>
+  <p align=center>
+    ¿Quieres conocer nuestro surtido? Pincha en la imagen. <br><br>
+    <img src="kiosko.jpg" onclick="mostrarSurtido(consultaPrecios)"/>
+  </p>
+
+</body>
+</html>
