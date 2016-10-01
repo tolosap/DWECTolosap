@@ -6,6 +6,7 @@
   <script type="text/javascript">
   var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
   "Sábado", "Domingo"];
+  
   var x = prompt("Introduzca un numero de dia.");
 
   function mostrarD(dias){
@@ -13,21 +14,21 @@
   }
 
   function num(x){
-    if ( isNaN(x) ) asd();
+    var x = prompt("Introduzca un numero de dia.");
+    if ( isNaN(x) ) alert("El numero introducido no es numerico");
     else if ( isFinite(x) ) return dias[x-1];
-
   }
 
   </script>
 </head>
 <body>
   <script type="text/javascript">
-  document.write(mostrarD(dias));
+  console.log(mostrarD);
 
   </script>
   <br>
   <script type="text/javascript">
-  document.write(num(x));
+  console.log(num);
   </script>
 </body>
 </html>
