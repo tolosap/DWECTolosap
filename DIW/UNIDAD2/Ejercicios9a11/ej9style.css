@@ -1,0 +1,25 @@
+*{
+  font-family: Verdana;
+  color: darkblue;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}
+h1{
+
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  text-transform: capitalize;
+
+}
+p{
+  text-indent: 1cm;
+}
+a:link{
+  text-decoration: none;
+}
+a:visited{
+  font-style: italic;
+  color: darkgreen;
+}
