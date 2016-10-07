@@ -1,0 +1,34 @@
+body{
+  font-family: Verdana;
+  color: darkblue;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  background-image: url(backg.jpg);
+}
+h1{
+
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  text-transform: capitalize;
+  background-image: url(h1bg.jpg);
+  color: white;
+  border-color: white;
+}
+p{
+  text-indent: 1cm;
+}
+a{
+  text-decoration: none;
+}
+a:visited{
+  font-style: italic;
+  color: darkgreen;
+}
+
+.pdf{
+  padding: 0 0 0 18px;
+  background: url(pdf.png) no-repeat left center;
+  background-size: 18px;
+}
