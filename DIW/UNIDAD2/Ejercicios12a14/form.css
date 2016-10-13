@@ -1,0 +1,52 @@
+label{
+  width: 20%;
+  float: left;
+}
+
+#datos{
+  display: block;
+  margin: 3px;
+}
+
+input{
+  border-radius: 4px;
+  margin-bottom: 12px;
+  display: grid;
+  padding: .3em;
+}
+
+select{
+  margin-bottom: 12px;
+}
+
+textarea{
+  height: 40px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+#hombre{
+  margin-right: 30px;
+}
+
+input#nombre:focus, input#apellidos:focus, input#email:focus, input#nacim:focus, input#poblacion:focus, input#telefono:focus, input#user:focus, input#password:focus, input#password2:focus{
+  background: lightgrey;
+  border: 2px solid rgb(210, 89, 217);
+}
+
+label#nombre:hover{
+  background: lightgrey;
+  border: 2px solid rgb(210, 89, 217);
+}
+
+div{
+  font-style: italic;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 4px;
+  border-style: dotted;
+  color: grey;
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

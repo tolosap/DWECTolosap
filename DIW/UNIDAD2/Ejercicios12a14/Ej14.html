@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 14</title>
+    <link rel="stylesheet" href="form.css">
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Inscripcion</legend>
+        <fieldset id="datos">
+          <legend>Información personal</legend>
+          <label for="nombre">Nombre*:</label>  <input type="text" id="nombre" autofocus maxlength="20" placeholder="Introduzca el nombre"><br>
+          <label for="apellidos">Apellidos*:</label>  <input type="text" id="apellidos" maxlength="50" placeholder="Introduzca apellidos"><br>
+          <label for="email">Email*:</label>  <input type="text" id="email" placeholder="Introduzca el email"><br>
+          <label for="sexo">Sexo:</label> Hombre <input type="radio" id="hombre" value="h">
+                                          Mujer  <input type="radio" id="mujer" value="m">
+                                          <br>
+          <label for="nac">Fecha de nacimiento*:</label>  <input type="text" id="nacim" maxlength="10" placeholder="dd/mm/aaaa" size="10"><br>
+          <label for="provincia">Provincia:</label> <select class="provincia" name="provincia"><br>
+                                                      <option>Escoge província</option>
+                                                      <option>Castelló</option>
+                                                      <option>València</option>
+                                                      <option>Alacant</option>
+                                                    </select><br>
+          <label for="poblacion">Poblacion:</label> <input type="text" id="poblacion" placeholder="Población" maxlength="30"><br>
+          <label for="telefono">Teléfono:</label> <input type="text" id="telefono" placeholder="000000000" maxlength="9" size="9"><br>
+          <label for="motivo">Motivo de inscripción:</label> <br> <textarea name="motivo" rows="4" cols="100" placeholder="Escribe aquí"></textarea><br>
+          <label for="colorA">Escoge el color de tu avatar:</label>  <input type="color" id="colorA" ><br>
+        </fieldset>
+
+        <fieldset id="users">
+          <legend>Creación de usuario</legend>
+          <label for="user">Nombre de usuario*</label>  <input type="text" id="user" placeholder="Usuario"><br>
+          <label for="passw">Contraseña*:</label> <input type="password" id="password" maxlength="8" size="10" placeholder="Contraseña"> <br>
+          <label for="passw2">Repite contraseña*:</label> <input type="password" id="password2" maxlength="8" size="10" placeholder="Contraseña"> <br>
+        </fieldset>
+          <input type="checkbox" name="input1">Deseo recibir copias de los mensajes del foro en mi correo electrónico
+          <br>
+          <input type="checkbox" name="input2">Deseo recibir notificaciones de próximos eventos en mi correo electrónico
+          <br>
+          <input type="submit" value="Confirmar registro">
+          <div class="nota">
+            Nota: los campos marcados con "*" son obligatorios.
+          </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
