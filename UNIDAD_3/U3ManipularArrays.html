@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>u3 Práctica 1</title>
+  <script type="text/javascript">
+
+  function contarPalabras(){
+    var palabras = new Array();
+    palabras = formulario.area.value.split(" ");
+    console.log(palabras);
+    var ventana = window.open("", "", "width=400,height=400");
+    ventana.document.write('<meta charset="utf-8">');
+    ventana.document.write('<b>Primera palabra: </b>' + palabras[0]);
+    ventana.document.write('<br><b>Última palabra: </b>' + palabras[palabras.length-1]);
+
+    function palabraLarga() {
+      var larga = "a";
+      var pos = 0;
+      for (var i = 0; i < palabras.length; i++) {
+        if (palabras[i].length > larga.length) {
+          pos = i;
+          larga = palabras[i];
+        }
+      }
+      ventana.document.write("<br><b>Palabra más larga: </b>" + palabras[pos]);
+    }
+
+    palabraLarga();
+
+    function palabraCorta() {
+      var corta = "asadasadsdsadsdsasadsadsdasas";
+      var pos2 = 0;
+      for (var i = 0; i < palabras.length; i++) {
+        if (palabras[i].length < corta.length) {
+          pos2 = i;
+          corta = palabras[i];
+        }
+      }
+      ventana.document.write("<br><b>Palabra más corta: </b>" + palabras[pos2]);
+    }
+
+    palabraCorta();
+
+    var lista = palabras.sort().join(' - ');
+    ventana.document.write("<br><b>Listado de palabras: </b>" + lista);
+    ventana.document.write("<br><b>Número de palabras: </b>" + palabras.length);
+    // ventana.document.write('<br><b>Palabra con mayor longitud: </b>' + palabras)
+  }
+  </script>
+
+  <style media="screen">
+  textarea, input{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Manipular Arrays</h1>
+  <form name="formulario">
+    <p>Introduce algunas palabras:</p>
+    <textarea name="area" rows="3" cols="40"></textarea>
+    <input type="button" name="boton" value="Aceptar" onclick="contarPalabras()">
+  </form>
+</body>
+</html>

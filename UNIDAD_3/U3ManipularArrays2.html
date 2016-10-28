@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>u3 Práctica 1</title>
+  <script type="text/javascript">
+    var letras = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o',
+    'p','q','r','s','t','u','v','w','x','y','z');
+    var numero = Math.floor((Math.random()* letras.length) + 1 );
+
+    var acertadas = new Array();
+    var falladas = new Array();
+
+    function obtLetras(){
+      document.write("<br><b>Introduce algunas palabras que empiecen por: </b>" + letras[numero] );
+    }
+
+    function comprobarPalabras(){
+      var palabras = new Array();
+      palabras = formulario.area.value.split(" ");
+      var contador = 0;
+      for (var i = 0; i < palabras.length; i++) {
+        if ( palabras[i].charAt(0) == letras[numero] ){
+          contador++;
+          acertadas.push(palabras[i]);
+        }
+        else {
+          falladas.push(palabras[i]);
+        }
+      }
+      partida();
+    }
+
+    function partida(){
+      var ventana = window.open("", "", "width=400,height=400");
+      if (falladas.length == 0) {
+        ventana.document.write('<meta charset="utf-8">');
+        ventana.document.write('<b>Has ganado! <br>Has acertado: </b>' + acertadas.length + " <b>palabra/s</b>");
+      }
+      else {
+        ventana.document.write('<meta charset="utf-8">');
+        ventana.document.write('<b>Has perdido! <br>Has acertado: </b>' + acertadas.length + " <b>palabra/s</b>");
+        for (var i = 0; i < falladas.length; i++) {
+          ventana.document.write('<br>'+falladas[i]);
+        }
+      }
+    }
+
+  // ventana.document.write('<br><b>Palabra con mayor longitud: </b>' + palabras)
+
+    </script>
+
+  <style media="screen">
+  textarea, input{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  </style>
+
+</head>
+<body>
+  <h1>Manipular Arrays 2</h1>
+  <form name="formulario">
+    <script type="text/javascript">
+    obtLetras();
+    comprobarPalabras();
+    </script>
+    <textarea name="area" rows="3" cols="40"></textarea>
+    <input type="button" name="boton" value="Aceptar" onclick="comprobarPalabras()">
+  </form>
+</body>
+</html>
