@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Practica Grid</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Oswald');
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo">
+        <img src="imagen.png" alt="logo" class="imag1"></img>
+        <img src="imagen2.png" alt="logo" class="imag2"></img>
+        <img src="imagen3.png" alt="logo" class="imag3"></img>
+      </div>
+      <h1>Blog Alumno Desarrollo de Aplicaciones Web</h1>
+    </div>
+  </header>
+
+  <section class="container">
+    <div class="row">
+      <!-- Aquí empieza el bloque izquierdo:
+      menú lateral izquierdo + entradas posts   -->
+      <div class="col-lg-9">
+        <!-- Menú lateral izquierdo   -->
+        <div class="row">
+          <nav>
+            <div class="col-lg-3 menu">
+              <ul>
+                <li>DWEC</li>
+                <li>DIW</li>
+                <li>DWES</li>
+              </ul>
+            </div>
+          </nav>
+          <!-- Elemento central: Primera entrada del blog -->
+          <div class="col-lg-9">
+            <article>
+              <h2>Publicación 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Elemento central: Segunda entrada del blog -->
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-9">
+            <article>
+              <h2>Publicación 2</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </article>
+          </div>
+        </div>
+        <!-- Elemento central: Tercera entrada del blog -->
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-9">
+            <article>
+              <h2>Publicación 3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+            </article>
+          </div>
+        </div>
+        <!-- Este div cierra el elemento el bloque de la izquierda:
+        menú lateral + entradas blog     -->
+      </div>
+
+      <!-- Menú lateral derecho -->
+      <div class="col-lg-3">
+        <div class="row">
+          <div class="col-lg-12">
+            <aside>
+              <p>Enlaces interés</p>
+            </aside>
+            <aside class="camiseta">
+              <img src="camiseta.jpg"/>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+      <p>Aquí va el pie</p>
+    </div>
+  </footer>
+
+</body>
+</html>
