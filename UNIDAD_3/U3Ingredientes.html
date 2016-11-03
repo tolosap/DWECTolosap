@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ingredientes</title>
+    <script type="text/javascript">
+
+      function Productos(codigo, nombre, ingredientes){
+        this.codigo = codigo;
+        this.nombre = nombre;
+        var precio = (Math.random() * 2 + 1);
+        this.precio = precio.toFixed(2);
+        this.ingredientes = ingredientes.sort();
+      }
+
+      Productos.prototype.imprimeDatos = function(){
+        document.write("Código: " + this.codigo);
+        document.write("Nombre: " + this.nombre);
+        document.write("Precio: " + this.precio);
+      }
+
+      Productos.prototype.borraIngredientes = function(){
+        if (this.ingredientes.length > 1) {
+          this.ingredientes.pop();
+        }
+        else {
+          alert('Solo queda 1 ingrediente');
+        }
+      }
+
+      Productos.prototype.buscaInfo = function () {
+        var url = 'www.google.es/search=?' + this.nombre;
+        window.open(url,"","width=500, height=500");
+      };
+
+      Productos.prototype.verIngredientes = function(){
+        for (var i = 0; i < this.ingredientes.length; i++) {
+          this.ingredientes[i]
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

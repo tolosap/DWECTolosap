@@ -1,0 +1,93 @@
+
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+h1 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75em;
+}
+
+h2 {
+  float: right;
+  border: 1px solid black;
+  width: 186px;
+  text-align: center;
+  margin-top: -1px;
+  margin-right: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 1.25em;
+}
+
+p {
+  clear: both;
+  background-color: #ABABAB;
+  width: 90%;
+  height: 150px;
+  margin-right: auto;
+  margin-left: 15px;
+  margin-bottom: 50px;
+  color: white;
+  font-size: 1em;
+  overflow: visible;
+}
+
+/*The container include a margin between browser and the elements*/
+.container2{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow: ;
+}
+
+/*The cells incluide a margin between sections */
+.cell{
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 20px;
+padding-bottom: 5px;
+background-color: #ABABAB;
+border: 1px solid black;
+}
+
+/*There are three classes of title: one for each color*/
+.title_red{
+  background-color: #FE2E2E;
+  color: white;
+}
+
+.title_salmon{
+  background-color: #F79F81;
+}
+
+.title_sand{
+  background-color: #F5DA81;
+}
+
+
+.navbar-brand{
+  color: darkgreen!important;
+  text-shadow: 1px 1px black;
+}
+
+.cabecera{
+  background-color: #BDBDBD;
+}
+
+@media (min-width: 767px) {
+  #myNavbar ul {
+    display: none;
+  }
+}
