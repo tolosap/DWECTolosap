@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+  var x = 1;
+  var y = 2;
+  function sumarSinParam() {
+    var res = y + x;
+  }
+
+  sumarSinParam();
+
+  function sumarConParam(a,b){
+    var res2 = a + b;
+  }
+  sumarConParam(x,y);
+
+  function sumarDevolver(a,b){
+    var res3 = a + b;
+    return res3;
+  }
+  sumarDevolver(x,y);
+
+  function sumarConFunc(sumarConParam(x,y)){
+    var resta = y - x;
+  }
+
+  var ventana = window.open("","","width=400, height=500");
+
+  //Abre una ventana con la busqueda de google de javascript
+  var url ="https://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=javascript";
+  var ventanaJS = window.open(url, "", "width=400, height=500");
+
+  window.close();
+
+  document.write( "Una dos tres");
+
+
+  var Array = new Array("Una","Dos","Tres");
+  for (var i = 0; i < Array.length; i++) {
+    ventana.document.body.innerHTML = Array[i] + "<br>";
+  }
+
+  function alert1() {
+    alert('Hola');
+  }
+
+  var recoger = prompt('Indtroduzca un numero: ');
+
+  console.log("Hola");
+
+  function saluda() {
+    return "Hola";
+  }
+  setInterval(saluda, 2000);
+
+  
+
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+    function escribirHola() {
+      document.write("Hola");
+    }
+  </script>
+  <input type="button" name="name" value="" onclick="sumarConParam(5,3)">
+  <input type="button" name="name" value="" onclick="ventana.document.write("Hola");">
+</body>
+</html>
