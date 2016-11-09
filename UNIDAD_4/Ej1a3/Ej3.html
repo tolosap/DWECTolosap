@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ej3</title>
+  <script type="text/javascript">
+    function cambiarC(){
+      var x = document.getElementsByTagName('p');
+      var color = document.getElementById('txtColor').value;
+      for (var i = 0; i < x.length; i++) {
+        var y = x[i];
+        y.style.color = color;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="contiene_ps">
+    <p>Pole</p>
+    <p>Subpole</p>
+    <p>Fail</p>
+    <p>ya es veves?</p>
+    <p>pillo sitio</p>
+    <p>TDS ES TDS</p>
+
+    <div id="cambiame">
+      <input type="color" id="txtColor" value="#288288">
+      <button id="actualizar" onclick="cambiarC();">Modificar los párrafos!</button>
+    </div>
+  </div>
+
+</body>
+</html>
