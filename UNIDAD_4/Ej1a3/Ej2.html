@@ -3,10 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Ej Hola mundo hecho con nodos DOM</title>
+  <script type="text/javascript">
+    function cambiarH1() {
+      var x = document.getElementsByTagName('h1');
+      var x2 = "Es broma";
+      document.innerHTML = x2;
+    }
+    function cambiarP() {
+
+    }
+    function cambiarDIV() {
+
+    }
+  </script>
 </head>
 <body>
-  <h1> Esto es un título</h1>
-  <p>Esto es un ejemplo </p>
-  <div> Esto es un div</div>
+  <h1> MAKE AMERICA</h1>
+  <p>GREAT </p>
+  <div> AGAIN</div>
+  <br><br>
+  <button type="button" name="button" onclick="cambiarH1();">cambiar h1</button>
+  <button type="button" name="button2" onclick="cambiarP();">cambiarP</button>
+  <button type="button" name="button3" onclick="cambiarDIV();">cambiarDIV</button>
 </body>
 </html>
