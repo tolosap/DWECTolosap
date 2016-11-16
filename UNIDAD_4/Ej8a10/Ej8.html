@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej8</title>
+    <script type="text/javascript">
+
+      function modificarSize() {
+
+        //seleccionamos todos los P a modificar
+        var parrafos = document.querySelectorAll('p');
+
+        //cambiamos el tamaño a 10
+        if (document.getElementsByTagName('select')[0].value=="10px") {
+          document.querySelector('h1').style.fontSize="10px";
+          for (var i = 0; i < parrafos.length; i++) {
+            parrafos[i].style.fontSize = "10px";
+          }
+        }
+
+        //cambiamos el tamaño a 16px
+        else if (document.getElementsByTagName('select')[0].value=="16px") {
+          document.querySelector('h1').style.fontSize="16px";
+          for (var i = 0; i < parrafos.length; i++) {
+            parrafos[i].style.fontSize = "16px";
+          }
+        }
+
+        //cambiamos el tamaño a 24px
+        else if (document.getElementsByTagName('select')[0].value=="24px") {
+          document.querySelector('h1').style.fontSize="24px";
+          for (var i = 0; i < parrafos.length; i++) {
+            parrafos[i].style.fontSize = "24px";
+          }
+        }
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>Modificar tamaño</h1>
+    <p>Lorem iparrafosum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Qué bonito que es Lorem iparrafosum. Voy a llorar de la emoción!</p>
+    <div>
+      <span>Seleccionar tamaño de fuente: </span>
+      <select id="combo">
+        <option value="10px">Pequeño</option>
+        <option value="16px">Mediano</option>
+        <option value="24px">Grande</option>
+      </select>
+      <button onclick="modificarSize();">Cambiar</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej10</title>
+    <script type="text/javascript">
+
+    function creaDOM(){
+
+      //creamos un h1 y un texto
+      var hs = document.createElement('h1');
+      var txt = document.createTextNode("KINGDOM HEARTS");
+
+      //hacemos que el texto sea hijo del h1 y este a su vez hijo de body
+      hs.appendChild(txt);
+      document.body.appendChild(hs);
+
+      //creamos una imagen
+      var foto = document.createElement('img');
+
+      //hacemos que sea hijo de body
+      document.body.appendChild(foto);
+
+      //le damos una direccion a la imagen para poder visualizarla
+      document.getElementsByTagName('img')[0].src = "https://az598155.vo.msecnd.net/wp-uploads/2015/01/kingdom_hearts_3_fan_made_poster_by_alexanderreyes26-d768rb1.jpg";
+
+      //Eliminamos la imagen mediante la orden DOM
+      foto.parentNode.removeChild(foto);
+    }
+
+    </script>
+  </head>
+
+  <body onload="creaDOM()">
+
+  </body>
+
+</html>
