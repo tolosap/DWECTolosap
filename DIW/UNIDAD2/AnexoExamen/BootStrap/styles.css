@@ -1,0 +1,47 @@
+*{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+[class*="col-"]{
+  float:left;
+}
+
+.logo1{
+  width: 5%;
+  height: 5%;
+  margin: auto;
+}
+
+
+.header{
+  background-color: rgb(48, 126, 218);
+  /*border: 1px solid black;*/
+}
+
+.article1{
+  background-color: red;
+  /*border: 1px solid black;*/
+}
+
+.article2{
+  background-color: green;
+  /*border: 1px solid black;*/
+}
+
+.article3{
+  background-color: orange;
+  /*border: 1px solid black;*/
+}
+
+.article4{
+  background-color: yellow;
+  /*border: 1px solid black;*/
+}
+
+.article5{
+  background-color: green;
+  /*border: 1px solid black;*/
+}

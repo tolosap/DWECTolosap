@@ -3,8 +3,18 @@
 <head>
 	<meta charset="utf-8"/>
 	<style media="screen">
+	@font-face {
+		font-family: Starjedi;
+		src: url(Starjedi.ttf);
+	}
+	h1{
+		font-family: Starjedi;
+		margin-left: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
 	.columna{
-		display:inline-block;
+		display: inline-block;
 		width: 180px;
 		height: 20px;
 		border-radius: 8px;
@@ -95,6 +105,7 @@
 			document.getElementsByTagName('img')[i].height = "270";
 
 			document.getElementsByTagName('a')[i].href = StarWarsCarteles[i].imdb;
+			document.getElementsByTagName('a')[i].target = "_blank";
 		}
 	}
 
