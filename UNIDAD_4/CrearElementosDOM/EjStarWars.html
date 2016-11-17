@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style media="screen">
+	.columna{
+		display:inline-block;
+		width: 180px;
+		height: 20px;
+		border-radius: 8px;
+		border: 2px solid navy;
+		text-align: center;
+	}
+	</style>
+	<script>
+
+	var StarWarsFilms=[
+		{titulo: "Titulo", nombre: "Nombre", any: "Año", director: "Director"},
+		{titulo: "Episodio IV", nombre:"Una Nueva Esperanza", any: 1977 ,director: "George Lucas"},
+		{titulo: "Episodio V", nombre:"El Imperio Contraataca", any:1980, director: "George Lucas"},
+		{titulo: "Episodio VI", nombre:"El Retorno del Jedi", any:1984, director: "George Lucas"},
+		{titulo: "Episodio I", nombre:"La Amenaza Fantasma", any:1999, director: "George Lucas"},
+		{titulo: "Episodio II", nombre:"El ataque de los clones", any:2002, director: "George Lucas"},
+		{titulo: "Episodio III", nombre:"La Venganza de los Sith", any:2005, director: "George Lucas"},
+		{titulo: "Episodio VII", nombre:"El Despertar de la Fuerza", any:2015, director: "J.J. Abrams"}
+	];
+
+	//creamos el array de los carteles
+	var StarWarsCarteles=[
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BZGEzZTExMDEtNjg4OC00NjQxLTk5NTUtNjRkNjA3MmYwZjg1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0076759/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BYmViY2M2MTYtY2MzOS00YjQ1LWIzYmEtOTBiNjhlMGM0NjZjXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX182_CR0,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0080684/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BODllZjg2YjUtNWEzNy00ZGY2LTgyZmQtYTkxNDYyOWM3OTUyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0086190/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BM2FmZGIwMzAtZTBkMS00M2JiLTk2MDctM2FlNTQ2OWYwZDZkXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UX182_CR0,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0120915/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BNDRkYzA4OGYtOTBjYy00YzFiLThhYmYtMWUzMDBmMmZkM2M3XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UY268_CR10,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0121765/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_UY268_CR9,0,182,268_AL_.jpg", imdb: "http://www.imdb.com/title/tt0121766/"},
+		{imagen: "https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY317_CR0,0,214,317_AL_.jpg", imdb: "http://www.imdb.com/title/tt2488496/"}
+	]
+
+	function cargaInfo(){
+
+		/*Aquí tengo que crear los nodos del DOM*/
+		var titulo = document.createElement('h1');
+		var texto = document.createTextNode('La saga StarWars');
+		titulo.appendChild(texto);
+		document.body.appendChild(titulo);
+
+		var tabla = document.createElement('div');
+		document.body.appendChild(tabla);
+
+
+		/*Recorro el array de objetos:*/
+		for (var i=0; i<StarWarsFilms.length; i++){
+			var celda = document.createElement('div');
+			tabla.appendChild(celda);
+			/*Recorro los campos del objeto*/
+			for (campo in StarWarsFilms[i]){
+				console.log("El " + campo + " de la pelicula " + i + " es : " + StarWarsFilms[i][campo]);
+				var fila = document.createElement('div');
+				celda.appendChild(fila);
+				var txt = document.createTextNode(StarWarsFilms[i][campo]);
+				fila.appendChild(txt);
+				fila.setAttribute('class','columna');
+			}
+		}
+
+		//Ponemos la primera fila en negrita
+		var negrita = document.getElementsByTagName('div')
+		negrita[1].style.fontWeight = "bold";
+
+		//creamos un br
+		var berre = document.createElement('br');
+		document.body.appendChild(berre);
+
+		// creamos el div con las imagenes
+		var divB = document.createElement('div');
+		document.body.appendChild(divB);
+
+		//creamos los 7 links con su img correspondiente
+		for (var i = 0; i < StarWarsCarteles.length; i++) {
+			var enlace = document.createElement('a');
+			divB.appendChild(enlace);
+			var imagen = document.createElement('img');
+			enlace.appendChild(imagen);
+
+		}
+
+		var arrayIMG = document.getElementsByTagName('img');
+
+		//asignamos a cada img un src y a cada a un href
+		for (var i = 0; i < arrayIMG.length; i++) {
+			document.getElementsByTagName('img')[i].src = StarWarsCarteles[i].imagen;
+
+			//damos formato a las imagenes
+			document.getElementsByTagName('img')[i].width = "180";
+			document.getElementsByTagName('img')[i].height = "270";
+
+			document.getElementsByTagName('a')[i].href = StarWarsCarteles[i].imdb;
+		}
+	}
+
+	</script>
+</head>
+<body onload = "cargaInfo()">
+</body>
+</html>
