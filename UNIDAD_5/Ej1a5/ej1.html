@@ -3,17 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Ej1</title>
-    <script type="text/javascript">
-      function oculta(x) {
-        x.style.visibility = "hidden";
-      }
-      function cambia(){
-
-      }
-    </script>
   </head>
   <body>
-    <img src="ban.png" width="20%" height="20%" onmouseover="cambia()"/>
-    <img src="ban2.png" width="40%" height="40%" onload="oculta(this)" />
+    <img width="30%" src="ban.png" onmouseover="this.src='ban2.png';" onmouseout="this.src='ban.png';"/>
   </body>
 </html>

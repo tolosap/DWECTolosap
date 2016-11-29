@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ej2</title>
+  <script type="text/javascript">
+  function cambiarColor() {
+    var h2s = document.getElementsByTagName('h2');
+    h2s[0].style.color="darkgreen";
+  }
+  </script>
+</head>
+<body>
+  <p onmousedown="this.innerHTML = 'El p ha cambiado'" onmouseup="this.innerHTML = 'Esto es el p'">Esto es el p</p>
+  <div onMouseOver="this.innerHTML = 'El div ha cambiado'" onmouseout="this.innerHTML = 'Esto es el div'">
+    Esto es el div
+  </div>
+  <h1 onmousemove="this.innerHTML = 'El h1 ha cambiado'">Esto es el h1</h1>
+  <h2 onclick="cambiarColor()">Click para cambiar el color</h2>
+  <h3 ondblclick="this.innerHTML = 'El h3 ha cambiado'">Doble click para cambiar</h3>
+</body>
+</html>
