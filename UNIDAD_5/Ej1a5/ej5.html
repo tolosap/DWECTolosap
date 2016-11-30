@@ -4,20 +4,28 @@
     <meta charset="utf-8">
     <title>Ej5</title>
     <script type="text/javascript">
-      var tamaño = document.getElementsById('h1')[0].style.fontSize;
-      function cambiarT(event){
-         event.target.style.fontSize = tamaño*2;
-         event.target.style.width = "400px";
-      }
+      var size = 24;
+      var ancho = 200;
+      function cambiarT(){
+        
+        document.querySelector('h1').style.fontSize = size + "px";
+				document.querySelector('img').style.width = ancho + "px";
+
+				onwheel = function (e){
+						if (e.target.nodeName == "H1") {
+							size *= 2;
+							e.target.style.fontSize = size + "px";
+						} else if (e.target.nodeName == "IMG") {
+							ancho *= 2;
+							e.target.style.width = ancho + "px";
+						}
+					}
+				}
     </script>
-    <style media="screen">
-      h1{
-        font-size: 24px;
-      }
-    </style>
   </head>
-  <body>
-    <h1 onmousewheel="cambiarT(event)" id="h1">El único navegador que no soporta este evento es Mozilla</h1>
-    <img src="davinci.jpg" onmousewheel="cambiarT(event)" id="img">
+
+  <body onload="cambiarT()">
+    <h1>El único navegador que no soporta este evento es Mozilla</h1>
+    <img src="davinci.jpg">
   </body>
 </html>
