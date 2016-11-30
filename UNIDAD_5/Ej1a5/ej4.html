@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej4</title>
+    <script type="text/javascript">
+      function mirarPos(event) {
+        if(event.shiftKey == true){
+          var x = event.clientX;
+          var y = event.clientY;
+          console.log("Pos x: "+x+" Pos y: "+y);
+        }
+      }
+    </script>
+    <style media="screen">
+      body{
+        height: 500px;
+        width: 500px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body onmousemove="mirarPos(event)">
+
+  </body>
+</html>
