@@ -7,20 +7,20 @@
       var size = 24;
       var ancho = 200;
       function cambiarT(){
-        
+
         document.querySelector('h1').style.fontSize = size + "px";
 				document.querySelector('img').style.width = ancho + "px";
 
 				onwheel = function (e){
-						if (e.target.nodeName == "H1") {
-							size *= 2;
-							e.target.style.fontSize = size + "px";
-						} else if (e.target.nodeName == "IMG") {
-							ancho *= 2;
-							e.target.style.width = ancho + "px";
-						}
+					if (e.target.nodeName == "H1") {
+						size *= 2;
+						e.target.style.fontSize = size + "px";
+					} else if (e.target.nodeName == "IMG") {
+						ancho *= 2;
+						e.target.style.width = ancho + "px";
 					}
 				}
+			}
     </script>
   </head>
 
