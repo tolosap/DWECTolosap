@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ej9</title>
+  <style type="text/css">
+  div{
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    background-color: yellow;
+    margin: 200px;
+    position: absolute;
+  }
+  </style>
+</head>
+<body>
+
+  <h1>Pulsa una flecha</h1>
+  <div></div>
+
+  <script type="text/javascript">
+
+  document.querySelector('div').style.left = "450px";
+  document.querySelector('div').style.top = "125px";
+
+  onkeyup = function (e) {
+    var div = document.querySelector('div');
+
+    //felcha izquierda
+    if (e.keyCode == 37) {
+      var pos = parseInt(div.style.left.substring(0, div.style.left.length - 2)); //quitamos px de las posiciones
+      var nuevapos = pos - 20;
+      if (nuevapos >= 0) {
+        div.style.left = nuevapos + "px";
+      }
+    }
+
+    //flecha arriba
+    else if (e.keyCode == 38) {
+      var pos = parseInt(div.style.top.substring(0, div.style.top.length - 2));
+      var nuevapos = pos - 20;
+      if (nuevapos >= 0) {
+        div.style.top = nuevapos + "px";
+      }
+    }
+
+    //flecha derecha
+    else if (e.keyCode == 39) {
+      var pos = parseInt(div.style.left.substring(0, div.style.left.length - 2));
+      var nuevapos = pos + 20;
+      if (nuevapos <= window.screen.availWidth) {
+        div.style.left = nuevapos + "px";
+      }
+    }
+
+    //fllecha abajo
+    else if (e.keyCode == 40) {
+      var pos = parseInt(div.style.top.substring(0, div.style.top.length - 2));
+      var nuevapos = pos + 20;
+      if (nuevapos <= window.screen.availHeight) {
+        div.style.top = nuevapos + "px";
+      }
+    }
+  }
+  </script>
+</body>
+</html>

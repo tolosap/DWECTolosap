@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <title>Ej8</title>
   <script type="text/javascript">
-
-  function pulsar(event) {
-    var num = 0;
-    var codi = document.querySelector('p');
-    if(event.shiftKey == true && (num%2 == 0) ){
-      num++;
-      document.body.innerHTML = codi.toUpperCase();
-    }
-    else if ()
-  }
+    var mayus = 0;
+  	onkeydown = function (e){
+  		if (mayus % 2 == 0 && e.shiftKey) {
+  				document.body.style.textTransform = "uppercase";
+  				mayus++;
+  		}
+  		else if (mayus % 2 == 1 && e.shiftKey){
+  				document.body.style.textTransform = "lowercase";
+  				mayus++;
+  		}
+  	}
   </script>
 </head>
-<body onkeypress="pulsar(event)">
+<body>
   <p>Esto es un texto, ¿a que no lo esperabas?</p>
 </body>
 </html>

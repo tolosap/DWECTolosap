@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ej10</title>
+</head>
+<body onkeypress="manejaZoom(event)">
+  <img src="https://hydra-media.cursecdn.com/lol.gamepedia.com/1/12/UOL2015.png?version=16a0c5d30344c37df0dc701831868b8c" alt="Bob">
+
+  <script type="application/javascript">
+  var incremento = 25;
+  var gTeclasEdicion = [45, 43]; // - y + array de teclas zoom
+  document.querySelector('img').style.width = 150 + "px";
+  document.querySelector('img').style.height = 150 + "px";
+  var width = parseInt(document.querySelector('img').style.width.slice(0, -2)); //quitamos el px
+
+  // function redimensiona(imagen, incremento) {
+  //
+  // }
+
+  function manejaZoom(e) {
+    
+    if (e.keyCode == gTeclasEdicion[1]) {
+      if (width < 1024) {
+        width += incremento;
+        document.querySelector('img').style.width = width + "px";
+        document.querySelector('img').style.height = width + "px";
+      }
+    }
+    else if (e.keyCode == gTeclasEdicion[0]) {
+      if (width > 150) {
+        width -= incremento;
+        document.querySelector('img').style.width = width + "px";
+        document.querySelector('img').style.height = width + "px";
+      }
+    }
+  }
+  </script>
+</body>
+</html>
