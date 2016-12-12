@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>Optimizar imagenes 3</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css?x25758" rel="stylesheet">
+</head>
+<body>
+
+  <div id="reproductor">
+
+    <span id="Play" class="spritePausa" onclick="cambioClase()"></span>
+    <span id="Stop" class="spriteStop" onclick="parar()"></span>
+    <span class="spriteSubir" onclick="document.querySelector('audio').volume += 0.1"></span>
+    <span class="spriteBajar" onclick="document.querySelector('audio').volume -= 0.1"></span>
+    <span class="spriteMute" onclick="mute()"></span>
+
+    <audio autoplay="autoplay">
+      <source src="Audio/DifferentHeaven.mp3" type="audio/mpeg">
+        <source src="Audio/DifferentHeaven.ogg" type="audio/ogg">
+        </audio>
+
+      </div>
+
+      <div id="cabecera" class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-4 col-md-4 col-sm-4"><img src="arrow.svg" id="flecha" alt="FlechaSVG" width="400px" height="400px"></div>
+        <div id="texto" class="col-lg-4 col-md-4 col-sm-4"><p>Práctica optimizar imagenes</p></div>
+      </div>
+
+      <div id="principal" class="col-lg-12 col-md-12 col-sm-12">
+        <video controls>
+          <source src="Videos/yolo.mp4" type="video/mp4">
+            <source src="Videos/yolo.webm" type="video/webm">
+            </video>
+          </div>
+          
+          <div id="persona" class="col-lg-6 col-md-12 col-sm-12">
+            <video controls>
+              <source src="Videos/RINGS.mp4"  type="video/mp4">
+                <source src="Videos/RINGS.webm" type="video/webm">
+                </video>
+                <p align="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <a href="tel:+34-676-81-24-09"><img src="tlf.png" class="tlf"></a>
+                  <a href="mailto:freezeasx@gmail.com"><img src="mail.png" class="mail"></a>
+                  <ul>
+                    <li><a href="http://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="http://linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="http://plus.google.com/"><i class="fa fa-google-plus"></i> </a></li>
+                  </ul>
+                </div>
+              </div>
+            </body>
+            </html>
