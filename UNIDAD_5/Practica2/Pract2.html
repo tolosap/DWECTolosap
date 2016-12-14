@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pract2</title>
+  <style media="screen">
+  div{
+    background-color: darkgrey;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin: 2px;
+  }
+  #celda21, #celda31{
+    clear: left;
+  }
+  </style>
+  <script type="text/javascript">
+  var turno = 0;
+  var numerofichas=[1,1];
+  var color=["blue","red"];
+
+  // var divs = document.getElementsByTagName('div');
+
+  onclick = function click(e) {
+    var ficha = e.target;
+    if(e.target.style.backgroundColor){
+      alert("coloca la ficha en otro sitio");
+    }
+    else{ficha.style.backgroundColor = color[turno];
+      comprobarF();
+    }
+  }
+
+  ondblclick = function dbclick(e){
+    var ficha = e.target;
+    ficha.style.backgroundColor = "darkgrey";
+  }
+
+  function comprobarF(){
+
+
+
+
+    if (turno == 0){
+      turno++;
+      document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 1"
+    }
+    else {
+      turno--;
+      document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 2"
+    }
+  }
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+  var titulo = document.createElement("h1");
+  document.body.appendChild(titulo);
+  turno = turno + 1;
+  titulo.innerText = "Turno de jugador " + turno;
+  </script>
+
+  <div id="celda11"></div><div id="celda12"></div><div id="celda13"></div>
+  <div id="celda21"></div><div id="celda22"></div><div id="celda23"></div>
+  <div id="celda31"></div><div id="celda32"></div><div id="celda33"></div>
+</body>
+</html>
