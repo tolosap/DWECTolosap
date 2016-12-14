@@ -18,50 +18,91 @@
   </style>
   <script type="text/javascript">
   var turno = 0;
-  var numerofichas=[1,1];
-  var color=["blue","red"];
-
+  var numfichas = [3,3];
+  var color = ["blue","red"];
+  var ganar = false;
   // var divs = document.getElementsByTagName('div');
 
-  onclick = function click(e) {
-    var ficha = e.target;
-    if(e.target.style.backgroundColor){
-      alert("coloca la ficha en otro sitio");
-    }
-    else{ficha.style.backgroundColor = color[turno];
+    onclick = function click(e) {
+      var ficha = e.target;
+      ficha.style.backgroundColor = color[turno];
       comprobarF();
     }
-  }
 
-  ondblclick = function dbclick(e){
-    var ficha = e.target;
-    ficha.style.backgroundColor = "darkgrey";
-  }
-
-  function comprobarF(){
-
-
-
-
-    if (turno == 0){
-      turno++;
-      document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 1"
+    ondblclick = function dbclick(e){
+      var ficha = e.target;
+      ficha.style.backgroundColor = "darkgrey";
     }
-    else {
-      turno--;
-      document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 2"
+
+    function comprobarF(){
+      if (document.getElementById('celda11').style.backgroundColor == color[turno] &&
+      document.getElementById('celda12').style.backgroundColor == color[turno] &&
+      document.getElementById('celda13').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda21').style.backgroundColor == color[turno] &&
+      document.getElementById('celda22').style.backgroundColor == color[turno] &&
+      document.getElementById('celda23').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda31').style.backgroundColor == color[turno] &&
+      document.getElementById('celda32').style.backgroundColor == color[turno] &&
+      document.getElementById('celda33').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda11').style.backgroundColor == color[turno] &&
+      document.getElementById('celda21').style.backgroundColor == color[turno] &&
+      document.getElementById('celda31').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda12').style.backgroundColor == color[turno] &&
+      document.getElementById('celda22').style.backgroundColor == color[turno] &&
+      document.getElementById('celda32').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda13').style.backgroundColor == color[turno] &&
+      document.getElementById('celda23').style.backgroundColor == color[turno] &&
+      document.getElementById('celda33').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda11').style.backgroundColor == color[turno] &&
+      document.getElementById('celda22').style.backgroundColor == color[turno] &&
+      document.getElementById('celda33').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+      if (document.getElementById('celda13').style.backgroundColor == color[turno] &&
+      document.getElementById('celda22').style.backgroundColor == color[turno] &&
+      document.getElementById('celda31').style.backgroundColor == color[turno]) {
+        ganar = true;
+        alert("El jugador " +(turno + 1)+ " gana");
+      }
+
+      if (turno == 0){
+        turno++;
+        document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 1"
+      }
+      else {
+        turno--;
+        document.getElementsByTagName('h1')[0].innerText = "Turno de jugador 2"
+      }
     }
-  }
+
+
   </script>
 </head>
 <body>
   <script type="text/javascript">
   var titulo = document.createElement("h1");
   document.body.appendChild(titulo);
-  turno = turno + 1;
-  titulo.innerText = "Turno de jugador " + turno;
+  titulo.innerText = "Turno de jugador 1";
   </script>
-
   <div id="celda11"></div><div id="celda12"></div><div id="celda13"></div>
   <div id="celda21"></div><div id="celda22"></div><div id="celda23"></div>
   <div id="celda31"></div><div id="celda32"></div><div id="celda33"></div>
