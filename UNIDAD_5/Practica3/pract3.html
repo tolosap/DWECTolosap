@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Practica 3</title>
+  <style media="screen">
+  body{
+    text-align: center;
+  }
+  h1{
+    color: rgb(135, 33, 39);
+    font-weight: bold;
+  }
+  div{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    font-size: 80px;
+    background: lightblue;
+    border: 1px solid black;
+    display: inline-block;
+  }
+  img{
+    width: 250px;
+    height: 250px;
+  }
+  </style>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    for (var i = 0; i < document.querySelectorAll('div').length; i++) {
+      document.querySelectorAll('div')[i].addEventListener('click', funcionClick1);
+      document.querySelectorAll('div')[i].addEventListener('click', funcionClick2);
+      document.querySelectorAll('div')[i].addEventListener('contextmenu', funcionClickD);
+    }
+  });
+
+  var n = 0;
+  function funcionClick1(e){
+    e.target.innerHTML = '<img src="' + e.target.id + '.jpg" alt="">';
+    console.log(e.target.innerHTML);
+    n++;
+    if ( n > 0 ){
+      for (var i = 0; i < document.querySelectorAll('div').length; i++) {
+        document.querySelectorAll('div')[i].removeEventListener('click', funcionClick1);
+      }
+    }
+  }
+
+  function funcionClick2(e){
+    alert('Tu premio es ' + e.target.id);
+  }
+
+  function funcionClickD(e){
+    if (e.target.id == "el descenso del Valencia CF") {
+      document.querySelectorAll('p')[0].style = "visibility: visible; display: block;";
+    }
+    if (e.target.id == "un report") {
+      document.querySelectorAll('p')[1].style = "visibility: visible; display: block;";
+    }
+    if (e.target.id == "una pole") {
+      document.querySelectorAll('p')[2].style = "visibility: visible; display: block;";
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>Escoge tu regalo</h1>
+  <p style="visibility: hidden; display: none;">Pista: temporada del Valencia CF</p>
+  <p style="visibility: hidden; display: none;">Pista: Ilitri</p>
+  <p style="visibility: hidden; display: none;">Pista: Primer mensaje</p>
+  <div id="el descenso del Valencia CF">?</div>
+  <div id="un report">?</div>
+  <div id="una pole">?</div>
+</body>
+</html>
