@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ej11</title>
+  </head>
+  <script type="text/javascript">
+  function calcTam() {
+  var ancho = window.outerWidth;
+  var alto = window.outerHeight;
+  var asd = "Tamaño de la ventana: Anchura = " + ancho + "px Altura = " + alto + "px.";
+  document.getElementById("ej11").innerHTML = asd;
+  }
+  </script>
+  <body onresize="calcTam()">
+    <h1 id="ej11">Redimensiona la ventana</h1>
+  </body>
+</html>

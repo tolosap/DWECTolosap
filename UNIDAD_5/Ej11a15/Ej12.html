@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio12</title>
+  <script>
+  function mostrarF() {
+    var x = document.getElementById("compra").value;
+    document.getElementById('imagen').src = x;
+  }
+  </script>
+</head>
+<body>
+  <h1>Lista de la compra</h1>
+  <select id="compra" onchange="mostrarF()">
+    <option value="ps4.jpg">PS4</option>
+    <option value="yate.jpg">Yate</option>
+    <option value="valencia.jpg">El descenso del Vlc</option>
+    <option value="pole.jpg">Una pole</option>
+  </select>
+  <br>
+  <br>
+  <img id="imagen" src="ps4.jpg"  width="600px">
+</body>
+</html>
