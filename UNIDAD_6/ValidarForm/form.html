@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <script text="text/javascript" src="form.js"></script>
+    <link rel="stylesheet" href="form.css">
+  </head>
+  <body>
+    <form id="formulario" action="index.html" method="post">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" autofocus="autofocus">
+      </div>
+      <div>
+        <label for="apell">Apellidos:</label>
+        <input type="text" name="apell" >
+      </div>
+      <div>
+        <label for="edad">Edad:</label>
+        <input type="text" name="edad" >
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" >
+      </div>
+      <div>
+        <label for="dni">DNI:</label>
+        <input type="text" name="dni" >
+      </div>
+      <label class="checkbox">
+        <input type="checkbox" name="cond"></input>
+        <p> He leído y acepto las condiciones en el servicio de alta.</p>
+      </label>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="captcha">
+      </div>
+
+      <div>
+        <textarea name="area" rows="4" cols="30"></textarea>
+      </div>
+
+      <input type="submit" value="Comprobar"></input>
+    </form>
+  </body>
+</html>
