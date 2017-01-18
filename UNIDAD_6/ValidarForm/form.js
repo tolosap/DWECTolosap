@@ -1,5 +1,5 @@
 onload = function() {
-  captcha = Math.round(Math.random() * (9999 - 1000) + parseInt(1000));
+  captcha = Math.round(Math.random() * (10000 - 1000) + parseInt(1000));
   var cap = document.getElementsByClassName('captcha')[0];
   cap.innerHTML = captcha;
 }
