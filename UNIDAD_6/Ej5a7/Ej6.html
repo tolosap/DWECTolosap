@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+    <script type="text/javascript">
+    //creamos una fecha y un user vacio
+    var lastConnVar = new Date();
+    var user = "";
+
+    //funcion que obtiene la ultima conexion del usuario en la pagina
+    function lastConn() {
+      var dd = lastConnVar.getDate();
+      var mm = lastConnVar.getMonth() + 1;
+      var yyyy = lastConnVar.getFullYear();
+      //Almacenamos la fecha de la ultima conexion
+      lastConnVar = dd + "/" + mm + "/" + yyyy;
+      document.cookie = "fechaUltimaConexion=" + lastConnVar+ ";";
+    }
+
+    //funcion que comprueba las cookies
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+      }
+    return "";
+    }
+
+    function introduceUser(){
+      user = prompt("Introduzca su nombre de usuario: ");
+      document.cookie = "usuario=" + encodeURIComponent(user) + ";";
+    }
+    </script>
+  </head>
+  <body>
+  <script type="text/javascript">
+    //si nuestra cookie esta vacia, realizamos la bienvenida
+    if (document.cookie == "") {
+      alert("Bienvenidx a esta página web.");
+      introduceUser();
+    }
+    //si ya se ha visitado la pagina anteriormente, muestra el usuario y su ultima conexion
+    else {
+      alert("Bienvenido de nuevo " +getCookie("usuario")+", su ultima conexion fue: " + getCookie("fechaUltimaConexion"));
+    }
+    lastConn();
+  </script>
+  </body>
+</html>
