@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Eventos</title>
+  <script type="text/javascript">
+  onload = function(){
+    //Cargamos los objetos de session
+    if (window.sessionStorage != null) {
+      var color = sessionStorage.getItem("Color");
+      var objetoColor = document.getElementById("color");
+      objetoColor.value = color;
+
+      var poblacion = sessionStorage.getItem("Poblacion");
+      var objetoPoblacion = document.getElementById("poblacion");
+      objetoPoblacion.innerHTML = poblacion;
+
+      var prov = sessionStorage.getItem("Provincia");
+      var objetoProv = document.getElementById("provincia");
+      objetoProv.innerHTML = prov;
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>Esto es la pagina de Eventos</h1>
+  <p>Su color escogido es: <input type="color" id="color">
+    <br>
+    Vive en: <span id="poblacion"></span>
+    <br>
+    Provincia de: <span id="provincia"></span></p>
+    <!-- <form name="presen2">
+    <input type="color" name="color" id="color"></input>
+    <br>
+    <label for="poblacion">Población: </label>
+    <input type="text" name="poblacion" id="poblacion"/>
+    <br>
+    <div>
+    <label for="selector">Provincia: </label>
+    <select name="provincia" id="selector">
+    <option value="0">Escoge provincia </option>
+    <option value="C">Castellón</option>
+    <option value="V">Valencia</option>
+    <option value="A">Alicante</option>
+  </select>
+</div>
+</form> -->
+</body>
+</html>
