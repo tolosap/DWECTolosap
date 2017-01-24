@@ -5,6 +5,7 @@
   <title>Foros</title>
   <script type="text/javascript">
   onload = function(){
+    if (typeof(Storage) !== "undefined") {
     //Cargamos los objetos de local
     if (window.localStorage != null) {
       var nombre = localStorage.getItem("Nombre");
@@ -18,6 +19,10 @@
       var genero = localStorage.getItem("Genero");
       var objetoGenero = document.getElementById("genero");
       objetoGenero.innerHTML = genero;
+    }
+    }
+    else {
+      alert('Error, su navegador no es compatible con webStorage.');
     }
   }
   </script>

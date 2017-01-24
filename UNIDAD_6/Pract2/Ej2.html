@@ -7,35 +7,42 @@
   <link rel="stylesheet" href="estiloEjFormulario.css">
   <script type="text/javascript">
   onsubmit = function(){
-    //Almacenamiento local
-    if (window.localStorage != null) {
-      var nombre = document.getElementById("nombre").value;
-      localStorage.setItem("Nombre", nombre);
+    //si el navegador no es compatible con webStorage, pasará al else.
+    if (typeof(Storage) !== "undefined") {
+      //Almacenamiento local
+      if (window.localStorage != null) {
+        var nombre = document.getElementById("nombre").value;
+        localStorage.setItem("Nombre", nombre);
 
-      var apellidos = document.getElementById("apellidos").value;
-      localStorage.setItem("Apellidos", apellidos);
+        var apellidos = document.getElementById("apellidos").value;
+        localStorage.setItem("Apellidos", apellidos);
 
-      if (document.getElementById("H").checked){
-        localStorage.setItem("Genero", "Hombre");
+        if (document.getElementById("H").checked){
+          localStorage.setItem("Genero", "Hombre");
+        }
+        if (document.getElementById("M").checked){
+          localStorage.setItem("Genero", "Mujer");
+        }
       }
-      if (document.getElementById("M").checked){
-        localStorage.setItem("Genero", "Mujer");
+
+      //Almacenamiento en sesion
+      if (window.sessionStorage != null){
+        var color = document.getElementById('color').value;
+        sessionStorage.setItem("Color", color);
+
+        var poblacion = document.getElementById('poblacion').value;
+        sessionStorage.setItem("Poblacion", poblacion);
+
+        var provincia = document.getElementById('selector').value;
+        if (provincia == "C"){ sessionStorage.setItem("Provincia", "Castellón"); }
+        if (provincia == "V"){ sessionStorage.setItem("Provincia", "Valencia"); }
+        if (provincia == "A"){ sessionStorage.setItem("Provincia", "Alicante"); }
       }
     }
-
-    //Almacenamiento en sesion
-    if (window.sessionStorage != null){
-      var color = document.getElementById('color').value;
-      sessionStorage.setItem("Color", color);
-
-      var poblacion = document.getElementById('poblacion').value;
-      sessionStorage.setItem("Poblacion", poblacion);
-
-      var provincia = document.getElementById('selector').value;
-      if (provincia == "C"){ sessionStorage.setItem("Provincia", "Castellón"); }
-      if (provincia == "V"){ sessionStorage.setItem("Provincia", "Valencia"); }
-      if (provincia == "A"){ sessionStorage.setItem("Provincia", "Alicante"); }
+    else {
+      alert('Error, su navegador no es compatible con webStorage.');
     }
+
   }
 
 </script>

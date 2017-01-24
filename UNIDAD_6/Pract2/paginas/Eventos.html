@@ -5,6 +5,7 @@
   <title>Eventos</title>
   <script type="text/javascript">
   onload = function(){
+    if (typeof(Storage) !== "undefined") {
     //Cargamos los objetos de session
     if (window.sessionStorage != null) {
       var color = sessionStorage.getItem("Color");
@@ -20,6 +21,10 @@
       objetoProv.innerHTML = prov;
     }
   }
+  else {
+    alert('Error, su navegador no es compatible con webStorage.');
+  }
+}
   </script>
 </head>
 <body>
