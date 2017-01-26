@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ej2</title>
+  <script type="text/javascript">
+  onload = function(){
+    asd = Math.round(Math.random() * (2));
+    var asd;
+    //creo un array con noticias
+    var array = ["not1.txt", "not2.txt", "not3.txt"];
+    if (window.XMLHttpRequest){
+      var xhr = new XMLHttpRequest();
+    }
+    else if(ActiveXObject("Microsoft.XMLHTTP")){
+      var xhr = ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //Crear funcion que realiza la peticion
+    function solicitDatos() {
+      xhr.onreadystatechange = gestionarDatos;
+      xhr.open('GET', array[asd], true);
+      console.log(asd);
+      xhr.send();
+    }
+    function gestionarDatos(){
+      if ( xhr.readyState == 4 && xhr.status == 200){
+        noticias.innerHTML = xhr.responseText;
+      }
+      //si pido cosas que no tiene
+      //si el state no es 4 o status no es 200 o falla uno de los 2
+      else if( xhr.readyState == 4 && xhr.status != 200){
+        var str = "Se ha producido el error: " + xhr.status;
+        str += "\n " + xhr.statusText;
+        str += "\n Más información: ";
+        str += "\n " + xhr.getAllResponseHeaders();
+        alert(str);
+      }
+    }
+    solicitDatos();
+  }
+  </script>
+</head>
+<body>
+  <h1>NOTICIASINTERESANTES.COM</h1>
+  <p id="noticias"></p>
+</body>
+</html>

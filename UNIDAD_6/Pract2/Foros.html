@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Foros</title>
+  <script type="text/javascript">
+  onload = function(){
+    if (typeof(Storage) !== "undefined") {
+    //Cargamos los objetos de local
+    if (window.localStorage != null) {
+      var nombre = localStorage.getItem("Nombre");
+      var objetoNombre = document.getElementById("nombre");
+      objetoNombre.innerHTML = nombre;
+
+      var apell = localStorage.getItem("Apellidos");
+      var objetoApellidos = document.getElementById("apellidos");
+      objetoApellidos.innerHTML = apell;
+
+      var genero = localStorage.getItem("Genero");
+      var objetoGenero = document.getElementById("genero");
+      objetoGenero.innerHTML = genero;
+    }
+    }
+    else {
+      alert('Error, su navegador no es compatible con webStorage.');
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>Esta es la pagina de los foros
+  </h1>
+  <p>Hola, <span id="nombre"></span> <span id="apellidos"></span> con género: <span id="genero"></span> </p>
+  <!-- <form name="presen">
+    <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre"/>
+      <br>
+    <label for="apellidos">Apellidos: </label>
+      <input type="text" name="apellidos" id="apellidos"/>
+      <br>
+    <label for="genero">Genero: </label>
+      <input type="text" name="genero" id="genero"/>
+      <br>
+  </form> -->
+</body>
+</html>

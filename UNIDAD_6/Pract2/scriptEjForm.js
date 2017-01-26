@@ -77,10 +77,10 @@ onload = function(){
     }
 
     if (formulario.copiaForo.checked == true){
-      formulario.action = "paginas/Foros.html";
+      formulario.action = "Foros.html";
     }
     else if (formulario.notificaEventos.checked == true){
-      formulario.action = "paginas/Eventos.html";
+      formulario.action = "Eventos.html";
     }
 
     if (ret){
