@@ -1,0 +1,3 @@
+﻿<div><h2>Estados de petición</h2><p id="StatusPet"></p></div>
+<div><h2>Cabeceras HTTP de la resupuesta del servidor</h2><p id="Cabecera"></p></div>
+<div><h2>Código de estado</h2><p id="CodEstado"></p></div>

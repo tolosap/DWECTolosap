@@ -9,12 +9,14 @@
     var asd;
     //creo un array con noticias
     var array = ["not1.txt", "not2.txt", "not3.txt"];
+
     if (window.XMLHttpRequest){
       var xhr = new XMLHttpRequest();
     }
     else if(ActiveXObject("Microsoft.XMLHTTP")){
       var xhr = ActiveXObject("Microsoft.XMLHTTP");
     }
+
     //Crear funcion que realiza la peticion
     function solicitDatos() {
       xhr.onreadystatechange = gestionarDatos;
