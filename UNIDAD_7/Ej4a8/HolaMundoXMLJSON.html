@@ -1,0 +1,66 @@
+s<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 1</title>
+  <script type="text/javascript">
+  //Crear el objeto xhr
+  //para ampliar compatibilidad de navegadores
+  if (window.XMLHttpRequest){
+    var xhr = new XMLHttpRequest();
+  }
+  else if(ActiveXObject("Microsoft.XMLHTTP")){
+    var xhr = ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+
+  //Crear funcion que realiza la peticion
+  function solicitDatos() {
+    xhr.onreadystatechange = gestionarDatos;
+
+    //para txt
+    // xhr.open('GET', 'datos.txt', true);
+
+    //para xml
+    // xhr.open('GET', 'datos.xml', true);
+
+    //para json
+    xhr.open('GET', 'datos.json', true);
+
+    xhr.send();
+  }
+  function gestionarDatos(){
+    if ( xhr.readyState == 4 && xhr.status == 200){
+      //con un txt
+      // resultado.innerHTML = xhr.responseText;
+
+      //con xml
+      // var xmlDoc = xhr.responseXML;
+      // console.log(xmlDoc);
+      // var nombres = xmlDoc.getElementsByTagName('nombre');
+      // console.log(nombres);
+
+      //con json
+      var objeto = JSON.parse(xhr.responseText);
+      console.log(objeto);
+    }
+    //si pido cosas que no tiene
+    //si el state no es 4 o status no es 200 o falla uno de los 2
+    else if( xhr.readyState == 4 && xhr.status != 200){
+      var str = "Se ha producido el error: " + xhr.status;
+      str += "\n " + xhr.statusText;
+      str += "\n Más información: ";
+      str += "\n " + xhr.getAllResponseHeaders();
+      alert(str);
+    }
+    // console.log("Esto es readyState " + xhr.readyState);
+    // console.log("Esto es status " + xhr.status);
+  }
+  </script>
+</head>
+<body>
+  <h1>Ejercicio Hello World</h1>
+  <input type="button" value="Solicitar datos" onclick="solicitDatos();"></input>
+  <p id="resultado">Este es el texto que sale al principio</p>
+</body>
+</html>

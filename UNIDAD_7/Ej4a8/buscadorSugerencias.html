@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo buscador</title>
+  <script type="text/javascript">
+  var xhr = new XMLHttpRequest();
+
+  function obtenSugerencia() {
+    var str = encodeURIComponent(buscador.value);
+    xhr.onreadystatechange = function(){
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        resultado.innerHTML = xhr.responseText;
+      }
+    }
+    // xhr.open("GET", "url" + "?usuario=" + us + "&pass=" + pass);
+    xhr.open("GET", "http://localhost:80/sugerencias.php?q=" + str, true);
+    xhr.send();
+  }
+
+  </script>
+</head>
+<body>
+  <form method="get">
+    Introduce un nombre <input type="text" id="buscador" onkeyup="obtenSugerencia();">
+    <p>Sugerencia <span id="resultado"></span></p>
+  </form>
+</body>
+</html>
