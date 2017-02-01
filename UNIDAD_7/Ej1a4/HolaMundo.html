@@ -17,12 +17,32 @@
   //Crear funcion que realiza la peticion
   function solicitDatos() {
     xhr.onreadystatechange = gestionarDatos;
-    xhr.open('GET', 'datos.txt', true);
+
+    //para txt
+    // xhr.open('GET', 'datos.txt', true);
+
+    //para xml
+    // xhr.open('GET', 'datos.xml', true);
+
+    //para json
+    xhr.open('GET', 'datos.json', true);
+
     xhr.send();
   }
   function gestionarDatos(){
     if ( xhr.readyState == 4 && xhr.status == 200){
-      resultado.innerHTML = xhr.responseText;
+      //con un txt
+      // resultado.innerHTML = xhr.responseText;
+
+      //con xml
+      // var xmlDoc = xhr.responseXML;
+      // console.log(xmlDoc);
+      // var nombres = xmlDoc.getElementsByTagName('nombre');
+      // console.log(nombres);
+
+      //con json
+      var objeto = JSON.parse(xhr.responseText);
+      console.log(objeto);
     }
     //si pido cosas que no tiene
     //si el state no es 4 o status no es 200 o falla uno de los 2

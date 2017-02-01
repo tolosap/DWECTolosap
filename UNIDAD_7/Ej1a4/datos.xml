@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+
+  <alumno>
+    <nombre>Victor</nombre>
+    <apellido>ElFalso</apellido>
+    <nota>3</nota>
+  </alumno>
+
+  <alumno>
+    <nombre>Victor</nombre>
+    <apellido>ElVerdadero</apellido>
+    <nota>5</nota>
+  </alumno>
+
+  <alumno>
+    <nombre>Paco</nombre>
+    <apellido>TT</apellido>
+    <nota>10</nota>
+  </alumno>
+
+</alumnos>

@@ -23,7 +23,6 @@
   function gestionarDatos(){
     if ( xhr.readyState == 4 && xhr.status == 200){
       resultado.innerHTML = xhr.responseText;
-      StatusPet.innerHTML = xhr.readyState;
       CodEstado.innerHTML = xhr.status;
       Cabecera.innerHTML = xhr.getAllResponseHeaders();
     }

@@ -1,0 +1,16 @@
+{
+  "alumnos":[
+    {"nombre":"Pepe",
+      "apellido":"Tolosa",
+      "nota":7.5
+    },
+    {"nombre":"Paco",
+      "apellido":"Ruiz",
+      "nota":5
+    },
+    {"nombre":"ASD",
+      "apellido":"JJJ",
+      "nota":4
+    }
+  ]
+}
