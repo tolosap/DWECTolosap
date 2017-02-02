@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("button").click(function(){
+      var url = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      $.getJSON( url, {
+        tags: "puppy, kitty, cat",
+        tagmode: "any",
+        format: "json"
+      },
+      function(data) {
+        $.each( data.items, function( i, item ) {
+          $( "<img>" ).attr( "src", item.media.m ).appendTo("body");
+          if ( i === 3 ) { return false;} //Hago esto para mostrar sólo 4
+        });
+      });
+
+    });
+  });
+  </script>
+</head>
+<body>
+  <button type="button" name="button">Enviame fotos</button>
+  <p id="resultado">Antes de que me envies texto con Ajax</p>
+</body>
+</html>
