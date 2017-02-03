@@ -7,8 +7,8 @@
 
   function comprobarLogin(e) {
     e.preventDefault();
-    var nombre = encodeURIComponent(nombre.value);
-    var pass = encodeURIComponent(pass.value);
+    var name = encodeURIComponent(nombre.value);
+    var passw = encodeURIComponent(pass.value);
     xhr.onreadystatechange = function(){
       if (xhr.readyState == 4 && xhr.status == 200) {
         resultado.innerHTML = xhr.responseText;
@@ -16,24 +16,20 @@
       }
     }
     xhr.open("POST", "http://localhost:80/validaLogin.php", true);
-    var str = "nombre=" + nombre + "&pass=" + pass;
-
+    var str = "nombre=" + name + "&pass=" + passw;
     // var str = "<usuario><nombre>" + nombre + "</nombre>";
     // str += "<pass>" + pass + "</pass></usuario>";
-    var parser = new DOMParser();
-    parser.parseFromString();
-
-    schr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(str);
   }
   </script>
 </head>
 <body>
   <form method="post">
-    Nombre <input type="text" name="nombre" id="nombre">
-    Password <input type="password" name="pass" id="pass">
+    Nombre <input type="text" id="nombre">
+    Password <input type="password" id="pass">
     <p id="resultado"></p>
-    <input type="submit" name="Enviar" conclick="comprobarLogin(event);">
+    <input type="submit" name="Enviar" onclick="comprobarLogin(event);">
   </form>
 </body>
 </html>

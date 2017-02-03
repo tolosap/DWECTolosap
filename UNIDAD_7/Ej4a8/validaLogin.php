@@ -6,5 +6,5 @@ $numeroAleatorio = rand(0, 10);
 sleep($numeroAleatorio % 3);
 // El script devuelve aleatoriamente 1 o 0 para que la aplicación
 // cliente pueda comprobar dos casos
-echo ($numeroAleatorio % 2 == 0)? 1 : 0;
+echo ($numeroAleatorio % 2 == 0)? "si" : "no";
 ?>
