@@ -1,0 +1,16 @@
+form{
+  margin: 8px;
+}
+div {
+  margin: .4em 0 .8em 0;
+}
+div label {
+  width: 8%;
+  float: left;
+}
+p{
+  display: inline;
+}
+input[type="text"]{
+  border-radius: 5px;
+}
