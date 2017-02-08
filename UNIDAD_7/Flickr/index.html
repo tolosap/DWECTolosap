@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba ejemplo</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("button").click(function(){
+      var selec = document.getElementById('selector');
+      var valor = selec.value;
+      var url = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+      $.getJSON( url, {
+        tags: valor,
+        tagmode: "any",
+        format: "json",
+        lang:"es-us",
+      },
+      function(data) {
+        $.each( data.items, function( i, item ) {
+          $( "<img>" ).attr( "src", item.media.m ).appendTo(".imagenes").width(150).height(150);
+          if ( i === 9 ) { return false;}
+        });
+      });
+    });
+    $("select").change(function(){
+      $(".imagenes").empty();
+    })
+  });
+  </script>
+</head>
+<body>
+
+  <div class="imagenes"></div>
+  <br><br>
+  <button type="button" name="button">Buscar fotos</button>
+  <select id="selector">
+    <option>Escoge una opcion</option>
+    <option value="robots">Robots</option>
+    <option value="perros">Perros</option>
+    <option value="gatos">Gatos</option>
+    <option value="musica">Musica</option>
+    <option value="juegos">Juegos</option>
+    <option value="cartas">Cartas</option>
+    <option value="mario">Super Mario</option>
+  </select>
+
+</body>
+</html>
