@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>StarWars Wiki</title>
-    <style media="screen">
-      h1{
-        text-align: center;
+<head>
+  <meta charset="utf-8">
+  <title>StarWars Wiki</title>
+  <style media="screen">
+  h1{
+    text-align: center;
+  }
+  div > div {
+    align-items: center;
+    width: 33%;
+    margin: 0;
+    float: left;
+  }
+  p{
+    margin-top: 0;
+  }
+  </style>
+  <script type="text/javascript">
+  var url = "";
+  function mostrarOpciones(v){
+    if(v!="none"){
+      url = "http://swapi.co/api/" + v;
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status ==200){
+          var x = xhr.responseText;
+          var jObj = JSON.parse(x);
+          var items = jObj.results;
+          var str = "<option value='none'>Elige opción</option>";
+          if (v == "films"){
+            for (i in items){
+              str += "<option value=" + i + ">" + items[i].title + "</option>"
+            }
+          }
+          else{
+            for (i in items){
+              str += "<option value=" + i + ">" + items[i].name + "</option>"
+            }
+          }
+          document.getElementById("items").innerHTML = str;
+        }
       }
-      select{
-          width: 15%;
-          margin-left: 35px;
-          display: inline-block;
-          vertical-align: top;
+      xhr.open("GET",url,true);
+      xhr.send();
+    } else {
+      document.getElementById("items").innerHTML = "<option value='none'>Escoge una opcion</option>";
+    }
+  }
+  //combo 2:
+  function mostrarMasOpciones(v2){
+    if(v2 != "none"){
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status ==200){
+          var x = xhr.responseText;
+          var jObj = JSON.parse(x);
+          var str = "";
+          var i = parseInt(v2);
+          var items = jObj.results[i];
+          var siesweb= new RegExp("http://","i");
+          for (var campo in items) {
+            if ((typeof(items[campo]) == "string" && siesweb.test(items[campo]) == false)|| typeof(items[campo]) == "number"){
+              str += "<p>" + campo + ":" + items[campo] + "</p>";
+            }
+          }
+          document.getElementById("ficha").innerHTML = str;
+        }
       }
-      #selectA{
-        margin-left: 400px;
-      }
-      #result{
-          width: 15%;
-          display: inline-block;
-      }
-    </style>
-    <script src="scriptSW.js"></script>
-  </head>
-  <body>
-    <h1>StarWars Wikipedia</h1>
-    <select id="selectA"></select>
-    <select id="selectB"></select>
-    <div id="result"></div>
-  </body>
+      xhr.open("GET",url,true);
+      xhr.send();
+    }
+    else {
+      document.getElementById("items").innerHTML = " ";
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>Wiki Star Wars</h1>
+  <div>
+    <div>
+      <select name="opciones" onchange="mostrarOpciones(this.value);">
+        <option value="none">Elige opción</option>
+        <option value="people">Personas</option>
+        <option value="planets">Planetas</option>
+        <option value="starships">Naves</option>
+        <option value="films">Películas</option>
+      </select>
+    </div>
+    <div id="combo">
+      <select id="items" name="items" onchange="mostrarMasOpciones(this.value);">
+        <option value="none"> Escoge una opcion </option>
+      </select>
+    </div>
+    <div id="ficha">
+      //Por mas que lo he intentado, no me ha salido
+    </div>
+  </div>
+</body>
 </html>
