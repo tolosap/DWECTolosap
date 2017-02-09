@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Examen Bloque 3</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+  <style media="screen">
+  form{
+    width: 400px;
+  }
+  div label{
+    width: 100px;
+    float:left;
+    margin-top: 5px;
+  }
+  input[type="text"],input[type="password"]{
+    padding-left:0.4em;
+    margin-top: 5px;
+  }
+  input[type="submit"]{
+    float:right;
+  }
+  #ayuda{
+    font-size: 0.8em;
+    font-style: italic;
+  }
+  #resultado, #errores{
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+  }
+  #contenido{
+    border: 1px solid navy;
+    height: 200px;
+  }
+  </style>
+  <script type="text/javascript">
+  onload = function(){
+    var errores = document.getElementById('errores')[0];
+    var lista = "";
+    var asd = true;
+    var cont = 0;
+  }
+  function validar(e){
+    e.preventDefault();
+    validarU();
+    validarP();
+    storageE();
+    if (cont>0) {
+      asd = false;
+    }
+    else{
+      errores = "Formulario enviado.";
+    }
+    errores.innerHTML = lista;
+    return asd;
+  }
+  //validar usuario
+  function validarU(){
+    var usuario = document.getElementsByName('us')[0].value;
+    console.log(usuario);
+    if (name == null || name.length == 0 || !/^\w+@\w+\.\w+$/.test(usuario)){
+      lista += "Error en el usuario. <br>";
+      // usuario.style.color = "red";
+      cont++;
+    }
+  }
+
+  //validar password
+  function validarP(){
+    var passw = document.getElementsByName('pass')[0].value;
+    console.log(passw);
+    if ( passw == null || passw.length == 0){
+      lista += "Error en la contraseña. <br>"
+      // usuario.style.color = "red";
+      cont++;
+    }
+  }
+
+  //para el storage
+  function storageE(){
+    if (typeof(Storage) !== "undefined") {
+      //local
+      if(window.localStorage != null){
+        var user = document.getElementById('user').value;
+        localStorage.setItem("Usuario", user);
+      }
+      //session
+      if(window.sessionStorage != null){
+        var pass = document.getElementById('pass').value;
+        sessionStorage.setItem("Password", pass);
+      }
+    }
+    else{
+      alert('Su navegador no es compatible con este tipo de almacenamiento.');
+    }
+  }
+
+  //para antiguos navegadores
+  if (window.XMLHttpRequest){
+    var xhr = new XMLHttpRequest();
+  }
+  else if(ActiveXObject("Microsoft.XMLHTTP")){
+    var xhr = ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+  //funcion de ayuda
+  function datos(){
+    xhr.onreadystatechange = tooltip;
+    xhr.open("GET", "Tooltip.txt", true);
+    xhr.send();
+  }
+  function tooltip(){
+    if ( xhr.readyState == 4 && xhr.status == 200){
+      tooltip.innerHTML = xhr.responseText;
+    }
+    else if( xhr.readyState == 4 && xhr.status != 200){
+      var str = "Se ha producido el error: " + xhr.status;
+      str += "\n " + xhr.statusText;
+      str += "\n Más información: ";
+      str += "\n " + xhr.getAllResponseHeaders();
+      alert(str);
+    }
+  }
+
+  //para comprobar el login
+  function comprobarLogin(e){
+    e.preventDefault();
+    var user = encodeURIComponent(user.value);
+    var passw = encodeURIComponent(pass.value);
+
+    xhr.onreadystatechange = function(){
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        resultado.innerHTML = xhr.responseText;
+      }
+    }
+
+    xhr.open("POST", "http://localhost:80/login.php", true);
+    var comp = "usuario=" + user + "&pass=" + passw;
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(comp);
+  }
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("#enviar").click(function(){
+      var url = "homeLogado2.json";
+      $.getJSON( url,
+        function(data) {
+          $.each( data.items, function( i, item ) {
+            $( "<img>" ).attr( "src", item.media.m ).appendTo(".contenido");
+            if ( i === 2 ) { return false;}
+          });
+        });
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <form method="post">
+      <fieldset>
+        <legend>Login</legend>
+        <div>
+          <label for="us">Usuario:</label>
+          <input type="text" name="us" id="user">
+          <a href="" onclick="datos();">Ayuda</a>
+          <p id="tooltip"></p>
+        </div>
+        <div>
+          <label for="pass">Contraseña:</label>
+          <input type="password" name="pass" id="pass">
+        </div>
+        <p id="resultado"></p>
+        <p id="errores"></p>
+        <input type="submit" value="Enviar" id="enviar" onclick="validar(e); comprobarLogin(e);"></input>
+      </fieldset>
+    </form>
+    <h3>Mis imágenes:</h3>
+    <div class="contenido"></div>
+  </body>
+  </html>
