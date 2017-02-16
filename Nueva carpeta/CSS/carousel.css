@@ -1,0 +1,213 @@
+/* CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  /*background-color: #777;*/
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+/*--------CONFIG CAROUSEL------------------*/
+/*
+  Si queremos poner margen, si no, comentamos #myCarousel
+*/
+#myCarousel{
+  margin: 2% 0 0 3%;
+  height: auto;
+  padding: 0 0 0 0;
+}
+
+/*Cada foto*/
+#myCarousel .item{
+  height: 400px;
+}
+
+/*Textos dentro del carousel*/
+.carousel-caption{
+  font-size: 20px !important;
+}
+
+.carousel-caption h1{
+  font-size: 24px !important;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*------------------------LATERAL---------------------*/
+/*CSS Para el div de informacion*/
+.contD{
+  margin: 8% 0 0 5%;
+}
+.contD h2{
+  /*color: #458c95;*/
+  font-size: 30px !important;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+.contD p{
+  font-size: 16px !important;
+  text-align: center;
+  color: darkgrey;
+}
+
+/*CSS para el hr que separa el h con el p*/
+hr{
+  height: 2px;
+  width: 65px;
+  position: relative;;
+  background: #458c95;
+  margin-bottom: 5%;
+}
+/*-------------------------------------------------------------------*/
+
+
+/*---------------------SLIDERS-----------------------------------------*/
+#primeraF{
+  background: url('../Imagenes/Carousel1.png') center no-repeat;
+}
+
+#segundaF{
+  background: url('../Imagenes/tarjetasBnear2.png') top center no-repeat;
+}
+
+#terceraF{
+  background: url('../Imagenes/tarjetasBNEARjoder.png') top center no-repeat;
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+/*/-------------DISPOSITIVOS GRANDES---------------/*/
+@media screen and (min-width: 991px) {
+  /*Tamaño del carousel*/
+  #myCarousel .item{
+    height: 500px;
+  }
+
+  #myCarousel{
+    margin: 2% 0 0 3%;
+    padding: 0 0 0 0;
+  }
+
+  .carousel-caption{
+    font-size: 18px !important;
+    color: white;
+    /*text-shadow: 3px 3px 2px #000000;*/
+  }
+
+  .carousel-caption h1{
+    font-size: 32px !important;
+    /*color: white;*/
+    /*text-shadow: 3px 3px 2px #000000;*/
+    color: #FFFFFF;
+  }
+
+  .contD{
+    margin: 8% 0 0 5%;
+  }
+  .contD h2{
+    font-size: 30px !important;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+  .contD p{
+    font-size: 16px !important;
+    text-align: center;
+    color: darkgrey;
+  }
+}
+
+
+/*-----------------------------DISPOSITIVOS PEQUEÑOS----------
+-----------------------------------------*/
+@media screen and (max-width: 767px) {
+  #myCarousel .item{
+    height: 210px;
+  }
+  #myCarousel{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+  .carousel-caption{
+    font-size: 13px !important;
+  }
+
+  .carousel-caption h1{
+    font-size: 2.3em !important;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .contD{
+    margin: 0% 0 0 0%;
+  }
+  .contD h2{
+    text-align: center;
+    font-size: 2em !important;
+    font-family: 'Lato', sans-serif;
+  }
+  .contD p{
+    text-align: center;
+    color: darkgrey;
+    font-size: 14px !important;
+  }
+  #primeraF{
+    background: url('../Imagenes/tablet1.png') center no-repeat;
+  }
+}
+
+/*------------------------OTROS DISPOSITIVOS--------------------*/
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #myCarousel .item{
+    height: 285px;
+  }
+  #myCarousel{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+  .carousel-caption{
+    font-size: 18px !important;
+  }
+
+  .carousel-caption h1{
+    font-size: 37px !important;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .contD{
+    margin: 0% 0 0 0%;
+  }
+  .contD h2{
+    text-align: center;
+    font-size: 32px !important;
+    font-family: 'Lato', sans-serif;
+  }
+  .contD p{
+    text-align: center;
+    color: darkgrey;
+    font-size: 17px !important;
+  }
+}

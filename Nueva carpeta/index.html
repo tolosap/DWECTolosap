@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BNear</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Imagenes/favicon.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen" />
+
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- Latest compiled and minified JavaScript -->
+      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+      <!-- Añadimos ajax: -->
+      <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+
+      <!-- Script para que funcione la galeria: -->
+      <script src="Scripts/galeria.js" charset="utf-8"></script>
+
+      <!-- G Font-->
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+      <!-- CSS Carrousel -->
+      <link rel="stylesheet" href="CSS/carousel.css">
+
+  </head>
+  <!-- <a href="#"><img src="Imagenes/logoLetras.png" alt="Logo de bnear" id="logoBnearLetras"></a> -->
+  <body>
+    <div class="menu">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="Imagenes/logoletrasBlanco.png" alt="Logo de bnear" id="logoBnearLetras"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="links">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#contenedorInicio">Inicio</a></li>
+          <li><a href="#contenedor1">Presentación</a></li>
+          <li><a href="#contenedor2">Productos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </nav>
+    </div>
+    <!-- Pagina de incio -->
+    <div class="container-fluid" id="contenedorInicio">
+      <div class="inicio col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <!-- <div class="LogoInicio center-block"> -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          </div>
+          <!-- LogoBannerPrincipal  -->
+          <img src="Imagenes/logoBnearAzul.png" alt="Logo de Bnear" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="imagenLogoInicio">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          </div>
+        </div>
+          <p id="parrafoBajoImagen" class="center-block">
+            ¡La tecnología NFC a tu alcance!
+          <br><a href="#" class="myButton">¡Descubre más!</a>
+          </p>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="container-fluid" id="contenedor1">
+      <div class="separadorInicioPresentacion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span id="textoSeparador1">Presentación</span>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <!-- Pagina de presentacion -->
+      <div class="presentacion">
+        <!-- Carrousel responsive
+        ================================================== -->
+        <div id="myCarousel" class="carousel slide col-lg-6 col-md-6 col-sm-12 col-xs-12" data-ride="carousel">
+          <!-- Boolets -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner" role="listbox">
+
+            <div class="item active" id="primeraF">
+              <!-- <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"> -->
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Example headline.</h1>
+                  <p>Esto es una prueba lorem ipsum</p>
+                  <!-- En caso de querer un boton -->
+                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Boton</a></p> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="item" id="segundaF">
+              <!-- <img src="" alt=""> -->
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Another example headline.</h1>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="item" id="terceraF">
+              <!-- <img src="" alt=""> Si queremos poner una imagen-->
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>One more for good measure.</h1>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--Se cierra la zona de items del carousel-->
+
+          <!--Controles-->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+
+
+        </div>
+        <!-- Se cierra el carousel -->
+
+        <div class="contD col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <h2>SOBRE NOSOTROS</h2>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <!-- Script para que funciona el Carrousel: -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      </div>
+    </div>
+    <!-- Separador de la pagina de presentacion y productos -->
+    <div class="container-fluid" id="contenedor2">
+      <div class="separadorPresentacionProductos col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span id="textoSeparador1">Galería de productos</span>
+      </div>
+      <!-- Pagina de productos -->
+      <div class="productos">
+        <!-- Galeria: -->
+        <div class="container">
+             <div align="center">
+                 <button class="btn btn-default filter-button active" data-filter="all">Todos</button>
+                 <button class="btn btn-default filter-button" data-filter="hdpe">Tarjetas</button>
+                 <button class="btn btn-default filter-button" data-filter="sprinkle">Pegatinas</button>
+                 <button class="btn btn-default filter-button" data-filter="spray">Llaveros</button>
+                 <button class="btn btn-default filter-button" data-filter="irrigation">Otros</button>
+             </div>
+             <br/>
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+
+                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                 </div>
+         </div>
+      </section>
+      </div>
+      <div class="separadorProductosContacto col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span id="textoSeparador2">Contacto</span>
+      </div>
+      <!-- Pagina de contacto -->
+      <div class="contacto">
+
+      </div>
+
+
+
+  </body>
+</html>

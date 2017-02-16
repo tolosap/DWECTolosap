@@ -1,0 +1,241 @@
+*{
+  color: black;
+  margin: auto;
+  font-size: 16px;
+}
+/*Ponemos una imagen de fondo en la pagina de inicio*/
+.inicio{
+  /*Ubicacion de la imagen*/
+  background-image: url(../Imagenes/tarjetasBnearOscurecido.jpg);
+
+  /* Nos aseguramos que la imagen de fondo este centrada vertical y
+      horizontalmente en todo momento */
+  background-position: center center;
+
+  /* La imagen de fondo no se repite */
+  background-repeat: no-repeat;
+
+  /* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+       la altura del contenido supere la altura de la imagen. */
+  background-attachment: fixed;
+
+  /* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+       del navegador */
+  background-size: cover;
+
+  /* Fijamos un color de fondo para que se muestre mientras se está
+      cargando la imagen de fondo o si hay problemas para cargarla  */
+  margin: 0 0 0 0;
+}
+.container-fluid{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/*Damos forma y estilo a la imagen del logo de Bnear que va encima de la imagen de fondo*/
+.LogoBannerPrincipal{
+  margin: auto;
+  float: left;
+  left: 25%;
+}
+
+/*Quitamos margenes a la barra de navegacion*/
+.navbar{
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
+}
+
+/*Damos estilo al menu*/
+/*.menu{
+  margin-bottom: 0px;
+  background-color: #A4A4A4;
+  border: 1px solid black;
+  display: block;
+}*/
+
+/*Pegamos los enlaces del menu a la derecha:*/
+.links{
+  float: right !important;
+  display: block !important;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+  display: inline;
+  position: relative;
+}
+#logoBnearLetras{
+  position: static;
+  width: 10%;
+  margin-left: 2%;
+}
+#imagenLogoInicio{
+  margin-top: 8% !important;
+}
+/*Damos estilo al texto de presentacion que va bajo la imagen*/
+#parrafoBajoImagen{
+  color: white;
+  font-size: 2em;
+  opacity: 0.9;
+  /*Lo posicionamos:*/
+  position: relative;
+  margin-top: 33%;
+  text-align: center;
+}
+/*Damos estilo al boton que va bajo de el parrafo de la pagina principal*/
+.myButton {
+	background-color:transparent;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	border:2px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	padding:14px 55px;
+	text-decoration:none;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.myButton:hover {
+   background: rgba(179, 179, 179, .1);
+   color: white;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*Ponemos color al separador 1 y le damos altura:*/
+.separadorInicioPresentacion{
+  padding: 0.7% 0 0.7% 0;
+  /*background-color: #458c91;*/
+  background-color: black;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.separadorInicioPresentacion span{
+color: white;
+font-size: 2.5em;
+opacity: 0.9;
+}
+
+#textoSeparador1{
+  text-shadow: 3px 3px 2px #000000;
+}
+
+/*Ponemos color al separador 1 y le damos altura:*/
+
+.separadorPresentacionProductos{
+  padding: 1% 0 1% 0;
+  /*background-color: #458c91;*/
+  background-color: black;
+  opacity: 0.9;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.separadorPresentacionProductos span{
+color: white;
+font-size: 2.5em;
+opacity: 0.9;
+}
+
+/*Estilo para el separador de productos y contacto:*/
+.separadorProductosContacto{
+  padding: 1% 0 1% 0;
+  /*background-color: #458c91;*/
+  background-color: black;
+  opacity: 0.9;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.separadorProductosContacto span{
+color: white;
+font-size: 2.5em;
+opacity: 0.9;
+}
+
+
+/*Estilo para la galeria de productos:*/
+/*Estilo para los botones de la galeria de productos*/
+.filter-button{
+  margin-top: 3% !important;
+  font-size: 1.4em !important;
+  border: 2px solid #458c91 !important;
+  border-radius: 5px !important;
+  text-align: center;
+  color: #458c91 !important;
+  margin-bottom: 2% !important;
+  margin-right: 2% !important;
+}
+.filter-button:hover{
+  border: 2px solid #458c91 !important;
+  color: #ffffff !important;
+  background-color: #458c91 !important;
+}
+.filter-button.active{
+  background-color: #458c91 !important;
+  color: white !important;
+}
+.port-image{
+  width: 100%;
+}
+.gallery_product{
+  margin-bottom: 30px;
+}
+
+/*Pruebas para que no se baje el menu*/
+@media screen and (min-width: 768px) and (max-width: 1057px) {
+  .navbar-header{
+    width: 40% !important;
+    margin-right: -10% !important;
+  }
+  #logoBnearLetras{
+    position: static;
+    width: 18%;
+    margin-left: 2%;
+  }
+}
+
+/*Media query para movil:*/
+@media screen and (max-width: 767px) {
+  .myButton {
+  	background-color: transparent;
+  	-moz-border-radius: 12px;
+  	-webkit-border-radius: 12px;
+  	border-radius: 12px;
+  	border: 2px solid #ffffff;
+  	display: inline-block;
+  	cursor: pointer;
+  	color: #ffffff;
+  	font-family: Arial;
+  	font-size: 0.8em !important;
+  	padding: 7px 27px !important;
+  	text-decoration: none;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  /*Cambiamos tamaño al parrafo bajo la imagen de inicio:*/
+  #parrafoBajoImagen{
+    color: white;
+    font-size: 1.5em;
+    opacity: 0.9;
+    /*Lo posicionamos:*/
+    position: relative;
+    margin-top: 33%;
+    text-align: center;
+  }
+  .LogoBannerPrincipal{
+    margin: auto;
+    float: left;
+    left: 25%;
+  }
+  /*Cambiamos el margen superior del logo de Bnear para que no de problemas:*/
+  #imagenLogoInicio{
+    margin-top: 15% !important;
+  }
+}
