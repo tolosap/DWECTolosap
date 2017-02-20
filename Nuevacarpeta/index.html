@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <meta charset="utf-8>
-	<meta name="viewport" content="width=device-width, initial-scale=1">">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BNear</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="Imagenes/favicon.png" type="image/x-icon">
@@ -28,6 +28,10 @@
 
       <!-- CSS Carrousel -->
       <link rel="stylesheet" href="CSS/carousel.css">
+
+      <!-- Script Cookies y el css -->
+      <script type="text/javascript" src="Scripts/cookies.js"></script>
+      <link rel="stylesheet" href="CSS/cookies.css">
 
   </head>
   <!-- <a href="#"><img src="Imagenes/logoLetras.png" alt="Logo de bnear" id="logoBnearLetras"></a> -->
@@ -56,6 +60,18 @@
   </div>
   </nav>
     </div>
+
+        <!-- BLOQUE COOKIES -->
+
+        <div id="zonacookies">
+        	<div class="inner">
+        		Solicitamos su permiso para obtener datos estad&iacute;sticos de su navegaci&oacute;n en esta web, en cumplimiento del Real Decreto-ley 13/2012. Si contin&uacute;a navegando consideramos que acepta el uso de cookies.
+        		<a href="javascript:void(0);" class="ok" onclick="ponerCookie();"><strong>OK</strong></a> |
+        		<a href="http://politicadecookies.com" target="_blank" class="info">M&aacute;s informaci&oacute;n</a>
+        	</div>
+        </div>
+
+        <!-- CIERRE COOKIES -->
     <!-- Pagina de incio -->
     <div class="container-fluid" id="contenedorInicio">
       <div class="inicio col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -70,7 +86,7 @@
         </div>
           <p id="parrafoBajoImagen" class="center-block">
             ¡La tecnología NFC a tu alcance!
-          <br><a href="#" class="myButton">¡Descubre más!</a>
+          <br><a href="#contenedor1" class="myButton">¡Descubre más!</a>
           </p>
         <!-- </div> -->
       </div>
@@ -101,8 +117,8 @@
               <!-- <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"> -->
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>Example headline.</h1>
-                  <p>Esto es una prueba lorem ipsum</p>
+                  <h1>NFC al alcance de todos</h1>
+                  <p>Te programamos las tarjetas a medida!</p>
                   <!-- En caso de querer un boton -->
                   <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Boton</a></p> -->
                 </div>
@@ -149,10 +165,12 @@
         <div class="contD col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <h2>SOBRE NOSOTROS</h2>
           <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p id="ParrafoSobreNosotros">
+            NFC son las siglas Near Field Communication. Se trata de una tecnología inalámbrica que funciona en la banda de los 13.56 MHz y que deriva de las etiquetas RFID de las que seguro que has oído hablar, debido a que están presentes en abonos de transporte o incluso sistemas de seguridad de tiendas físicas.
+            <br><br>
+            BNear NFC pretende llevar la tecnología NFC a todas las casas y a todas las personas,
+            ofreciendo tarjetas y pegatinas ya programadas y/o
+            brindando la oportunidad de programarlas a la medida y necesidades de nuestros clientes. </p>
         </div>
 
         <!-- Script para que funciona el Carrousel: -->
@@ -179,51 +197,51 @@
              </div>
              <br/>
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
 
                  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                     <img src="https://fakeimg.pl/365x365/" class="img-responsive">
+                     <img src="http://fakeimg.pl/365x365/" class="img-responsive">
                  </div>
          </div>
       </section>
@@ -236,6 +254,11 @@
 
       </div>
 
+    <div class="container-fluid">
+      <div class="pie">
+
+      </div>
+    </div>
 
 
   </body>

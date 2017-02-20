@@ -3,6 +3,10 @@
   margin: auto;
   font-size: 16px;
 }
+
+/*[class*="col-"]{
+  float:left;
+}*/
 /*Ponemos una imagen de fondo en la pagina de inicio*/
 .inicio{
   /*Ubicacion de la imagen*/
@@ -124,6 +128,12 @@ opacity: 0.9;
 
 #textoSeparador1{
   text-shadow: 3px 3px 2px #000000;
+}
+
+/*Damos estilo al texto de sobre nosotros:*/
+#ParrafoSobreNosotros{
+  color: black;
+
 }
 
 /*Ponemos color al separador 1 y le damos altura:*/
